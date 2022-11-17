@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @keyframes move-dot {
+            from {
+            transform: rotate(0deg);
+            }
+        
+            to {
+            transform: rotate(90deg);
+            }
+        }
+        div{
+            margin-left: 50px;
+        }
+
+        .dot {
+            z-index: 1;
+            position: absolute;
+            /* 
+                날아가는 높이, 거리 값 
+            */
+            width: 100px;           
+            height: 100px;
+            margin-top: 200px;
+            transform: rotate(90deg);
+            animation: move-dot 5s;
+        }
+        
+        .dot::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        #wrapperWidth{
+            position: fixed;
+            z-index: 4;
+            margin-top: 200px;
+            display: flex;
+            top: 0px;
+            left: 50px;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="volume">
+    <div class="dot"></div>
+    <br>
+    <div>
+        <input type="range" id="wrapperWidth" value="100" max="100" min="50">
+    </div>
+    
+
+
+    <script>
+        document.querySelector("#wrapperWidth").addEventListener("mousemove", function(){
+           
+            let targetX = this.value;
+            document.querySelector(".dot").style.height=targetX;
+            document.querySelector(".dot").style.width=targetX;
+
+
+
+        });
+  
+
+       
+
+    </script>
+</body>
+</html>
