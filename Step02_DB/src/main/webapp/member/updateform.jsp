@@ -29,7 +29,9 @@
 	}
 </style>
 <body>
-<jsp:include page="/include/nav_bar.jsp"></jsp:include>
+<jsp:include page="/include/nav_bar.jsp">
+	<jsp:param value="member" name="thisPage"/>
+</jsp:include>
 	<nav class="navbar navbar-expand-md bg-success navbar-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="${pageContext.request.contextPath}/">
