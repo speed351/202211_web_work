@@ -20,6 +20,51 @@ public class UsersDao {
 		}
 		return dao;
 	}
+	
+   public UsersDto getData(String id) {
+	      
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs=null;
+	      
+	      UsersDto dto = new UsersDto();
+
+	      try {
+	         conn = new DbcpBean().getConn();
+	         String sql = "SELECT pwd, email, profile, regdate"
+	               + " FROM users"
+	               + " WHERE id=?";
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setString(1, id);
+	         
+	         rs=pstmt.executeQuery();
+	         if(rs.next()) {
+	            dto.setId(id);
+	            dto.setPwd(rs.getString(1));
+	            dto.setEmail(rs.getString(2));
+	            dto.setProfile(rs.getString(3));
+	            dto.setRegdate(rs.getString(4));
+	         }
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            if (rs != null)
+	               rs.close();
+	            if (pstmt != null)
+	               pstmt.close();
+	            if (conn != null)
+	               conn.close();
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      }
+
+	      return dto;
+	   }
+	
+	
 	//회원 한명의 정보를 DB에 저장하고 성공여부를 리턴하는 메소드
 	public boolean insert(UsersDto dto) { //UsersDto에 id, pwd, email이 있다.
 		//필요한 객체를 담을 지역변수 미리 선언

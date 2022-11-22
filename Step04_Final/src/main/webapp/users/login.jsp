@@ -49,11 +49,11 @@
 	<%if(isValid){ %>
 
 		<h3>로그인 성공</h3>
-		<label name="id" id="id"><%=id%>님 안녕하세요.</label>
+		<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id%></a>님 안녕하세요.
 		<a href="<%=url%>">이용하려던 페이지로 이동</a>
 	<%}else{ %>
 		<p class="alert alert-danger">
-			<a href="${pageContext.request.contextPath}/users/loginform.jsp?url=<%=encodedUrl%>">다시시도</a>
+			<a href="${pageContext.request.contextPath}/users/login_form.jsp?url=<%=encodedUrl%>">다시 시도</a>
 		</p>
 		
 	<%} %>
