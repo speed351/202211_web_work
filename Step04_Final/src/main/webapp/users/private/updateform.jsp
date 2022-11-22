@@ -1,5 +1,13 @@
+<%@page import="test.users.dto.UsersDto"%>
+<%@page import="test.users.dao.UsersDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	//session scope에 저장된 아이디를 통해서
+	String id = (String)session.getAttribute("id");
+	//수정할 회원 정보를 받아온다
+	UsersDto dto = UsersDao.getInstance().getData(id);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,25 +21,21 @@
 
 <body>
 	<div class="container">
-		<h3>회원 가입 폼 입니다.</h3>
+		<h3>회원 가입 수정 폼입니다</h3>
 		<jsp:include page="/include/nav_bar.jsp">
 			<jsp:param value="index" name="thisPage"/>
 		</jsp:include>
-		
-		<form action="signup.jsp" method="post">
+		<form action="update.jsp" method="post">
 			<div>
-				<label class="control-label" for="id">아이디</label>
-				<input class="form-control" type="text" name="id" id="id" />
+				<label for="id">아이디</label>
+				<input type="text" id="id" value="<%=dto.getId()%>" disabled/>
 			</div>
 			<div>
-				<label class="control-label" for="pwd">비밀번호</label>
-				<input class="form-control" type="password" name="pwd" id="pwd" />
+				<label for="email">이메일</label>
+				<input type="text" id="email" name="email" value="<%=dto.getEmail()%>" />
 			</div>
-			<div>
-				<label class="control-label" for="email">이메일</label>
-				<input class="form-control" type="text" name="email" id="email" placeholder="aaa@bbb.com" />
-			</div>
-			<button class="btn btn-oulne-primary type="submit">가입</button>
+			<button type="submit">수정하기</button>
+			<button type="reset">취소</button>
 		</form>
 	</div>
 </body>

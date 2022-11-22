@@ -23,9 +23,18 @@
    }
 </style>
 </head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 <body>
    <div class="container">
-      <h1>가입 정보 입니다.</h1>
+      <h3>가입 정보 입니다.</h3>
+      <jsp:include page="/include/nav_bar.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
+      
       <table>
          <tr>
             <th>아이디</th>
@@ -52,12 +61,24 @@
          <tr>
             <th>이메일</th>
             <td><%=dto.getEmail() %></td>
+         
          </tr>
          <tr>
             <th>가입일</th>
             <td><%=dto.getRegdate() %></td>
          </tr>
       </table>
+      <a href="updateform.jsp">수정하기</a>
+      <a href="javascript:deleteConfirm()">탈퇴</a>
    </div>
+   <script>
+   	function deleteConfirm(){
+   		let isDelete=confirm("확인을 누르면 탈퇴가 됩니다.");
+   		if(isDelete){
+   			location.href="delete.jsp";
+   			
+   		}
+   	}
+   </script>
 </body>
 </html>

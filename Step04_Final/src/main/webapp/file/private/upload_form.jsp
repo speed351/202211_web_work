@@ -13,26 +13,30 @@
 
 <body>
 	<div class="container">
-		<h3>회원 가입 폼 입니다.</h3>
+		<h3>파일 업로드 폼</h3>
 		<jsp:include page="/include/nav_bar.jsp">
 			<jsp:param value="index" name="thisPage"/>
 		</jsp:include>
-		
-		<form action="signup.jsp" method="post">
-			<div>
-				<label class="control-label" for="id">아이디</label>
-				<input class="form-control" type="text" name="id" id="id" />
-			</div>
-			<div>
-				<label class="control-label" for="pwd">비밀번호</label>
-				<input class="form-control" type="password" name="pwd" id="pwd" />
-			</div>
-			<div>
-				<label class="control-label" for="email">이메일</label>
-				<input class="form-control" type="text" name="email" id="email" placeholder="aaa@bbb.com" />
-			</div>
-			<button class="btn btn-oulne-primary type="submit">가입</button>
-		</form>
+		<!-- 
+			파일 업로드 폼 작성법
+			1. method="post"
+			2. enctype="multipart/form-data"
+			3. <input type="file" />
+			- enctype="multipart/form-data" 가 설정된 폼을 전송하면
+			폼전송된 내용을 추출할 때 HTTPServletRequest 객체로 추출을 할 수 없다.
+			MultiPartRequest 객체를 이용해서 추출해야 한다.
+		 -->	
+		 <form action="upload.jsp" method="post" enctype="multipart/form-data">
+		 	<div>
+		 		<label for="title">제목</label>
+		 		<input type="text" name="title" id="title"/>
+		 	</div>
+		 	<div>
+		 		<label for="myFile">첨부파일</label>
+		 		<input type="file" name="myFile" id="myFile"/>
+		 	</div>
+		 	<button type="submit">업로드</button>
+		 </form>
 	</div>
 </body>
 </html>

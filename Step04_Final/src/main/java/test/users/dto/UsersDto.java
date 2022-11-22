@@ -7,20 +7,22 @@ public class UsersDto {
 	private String profile;
 	private String regdate;
 	
+	//새 비밀번호를 담을 필드
+	private String newPwd;
+	
 	public UsersDto() {
 	
 	}
-	
-	
-	public UsersDto(String id, String pwd, String email, String profile, String regdate) {
+
+	public UsersDto(String id, String pwd, String email, String profile, String regdate, String newPwd) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;
 		this.profile = profile;
 		this.regdate = regdate;
+		this.newPwd = newPwd;
 	}
-
 
 	public String getId() {
 		return id;
@@ -61,6 +63,16 @@ public class UsersDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+
+	public String getNewPwd() {
+		return newPwd;
+	}
+
+	public void setNewPwd(String newPwd) {
+		this.newPwd = newPwd;
+	}
+	
+
 	
 	
 }

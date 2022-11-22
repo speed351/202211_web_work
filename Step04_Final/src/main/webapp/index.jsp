@@ -55,7 +55,6 @@
 			<%
 			if(id==null){
 			%>
-			
 				<form action="${pageContext.request.contextPath}/users/login.jsp" method="post">
 					<input type="hidden" name="url" value="<%=url%>" />
 					<div>
@@ -73,31 +72,23 @@
 				</form>
 			
 			<%} else { %>
-				<p>안녕하세요</p>
+				<p>컨텐츠 들어오고</p>
 				<div class="user_menu" style="float:right; display:inline">
 					<div class="card" style="width: 20rem;">
 						<img src="https://images.indianexpress.com/2022/10/Lionel-Messi.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h5 class="card-title"><a href="${pageContext.request.contextPath}/private/info.jsp"><%=id %></a></h5>
-								
+								<h5 class="card-title"><a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a></h5>
 								<p>님 안녕하세요.</p><br>
 								<p class="card-text">여러 컨텐츠를 즐겨보세요.</p>
-								<br>
-								<a href="${pageContext.request.contextPath}/users/logout.jsp" class="btn btn-primary" style="position:relative; bottom:40px; left:210px;"> Logout </a>
+								<a href="${pageContext.request.contextPath}/users/logout.jsp" class="btn btn-primary" style="position:relative; bottom:20px; left:15px;"> Logout </a>
+								<a href="file/list.jsp">자료실</a>
+								<a href="">블로그</a>
+								<a href="">카페</a>
+								
 							</div>
 					</div>
 					
-					
-					
-					<svg id="profileImage" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-	                	<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-	                	<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-	                </svg>
-					<a href="${pageContext.request.contextPath}/private/info.jsp"><%=id%></a>님 안녕하세요.
-					
-					<form class="btn" action="${pageContext.request.contextPath}/users/logout.jsp">
-						<button>로그아웃</button>
-					</form>
+
 				</div>
 			
 			<%}%>

@@ -20,8 +20,113 @@ public class UsersDao {
 		}
 		return dao;
 	}
+	public boolean delete(String id) {
+		//필요한 객체를 담을 지역변수 미리 선언
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rowCount = 0;
+		try {
+			//Connection Pool에서 Connection 객체를 하나 가져온다.
+			conn = new DbcpBean().getConn();
+			//실행할 sql문의 뼈대 구성
+			String sql = "DELETE FROM users"
+					+ " WHERE id=?";
+			//sql문의 ?에 바인딩 할 항목이 있다면 하기
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+
+			//반복문 돌면서 ResultSet에 필요한값 넣기
+			rowCount = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return rowCount>0 ? true : false;
+	}
 	
-   public UsersDto getData(String id) {
+	
+	public boolean update(UsersDto dto) {
+		//필요한 객체를 담을 지역변수 미리 선언
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rowCount = 0;
+		try {
+			//Connection Pool에서 Connection 객체를 하나 가져온다.
+			conn = new DbcpBean().getConn();
+			//실행할 sql문의 뼈대 구성
+			String sql = "UPDATE users"
+					+ " SET email=?"
+					+ " WHERE id=?";
+			//sql문의 ?에 바인딩 할 항목이 있다면 하기
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getEmail());
+			pstmt.setString(2, dto.getId());
+			
+
+			//반복문 돌면서 ResultSet에 필요한값 넣기
+			rowCount = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return rowCount>0 ? true : false;
+	}
+	
+	
+	public boolean updatePwd(UsersDto dto) {
+		//필요한 객체를 담을 지역변수 미리 선언
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rowCount = 0;
+		try {
+			//Connection Pool에서 Connection 객체를 하나 가져온다.
+			conn = new DbcpBean().getConn();
+			//실행할 sql문의 뼈대 구성
+			String sql = "UPDATE users"
+					+ " SET pwd=?"
+					+ " WHERE id=? AND pwd=?";
+			//sql문의 ?에 바인딩 할 항목이 있다면 하기
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getNewPwd());
+			pstmt.setString(2, dto.getId());
+			pstmt.setString(3, dto.getPwd());
+			
+
+			//반복문 돌면서 ResultSet에 필요한값 넣기
+			rowCount = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return rowCount>0 ? true : false;
+	}
+	
+	public UsersDto getData(String id) {
 	      
 	      Connection conn = null;
 	      PreparedStatement pstmt = null;

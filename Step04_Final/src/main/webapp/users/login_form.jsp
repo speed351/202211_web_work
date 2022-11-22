@@ -24,6 +24,9 @@
 <body>
 	<div class="container">
 		<h3>로그인 폼</h3>
+		<jsp:include page="/include/nav_bar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
 		<form action="login.jsp" method="post">
 			<!-- 로그인 성공 후 어디로 갈지에 대한 정보를 url이라는 파라미터 명으로 같이 전송되도록 한다. -->
 			<input type="hidden" name="url" value="<%=url%>" />
