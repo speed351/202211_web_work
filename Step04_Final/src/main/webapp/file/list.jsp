@@ -4,6 +4,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
+	//로그인된 아이디를 읽어온다(로그인 하지 않았으면 null이다)
+	String id = (String)session.getAttribute("id");
 	//파일 목록을 얻어와서
 	List<FileDto> list = FileDao.getInstance().getList();
 
@@ -36,6 +39,7 @@
 					<th>파일명</th>
 					<th>크기</th>
 					<th>등록일</th>
+					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -49,6 +53,13 @@
 						</td>
 						<td><%=tmp.getFileSize()%></td>
 						<td><%=tmp.getRegdate()%></td>
+						<td>
+							<%-- 글 작성자가 로그인된 아이디와 같을때만 삭제 링크를 제공한다. 
+							반대로 로그인된 아이디를 작성자와 비교하면 nullpoint exception이 발생할 수 있으므로 조심 --%>
+							<%if(tmp.getWriter().equals(id)){ %>
+								<a href="javascript:deleteConfirm(<%=tmp.getNum()%>)">삭제</a>
+							<%} %>
+						</td>
 					</tr>
 				<%} %>
 			</tbody>
@@ -56,5 +67,30 @@
 		
 		<a href="${pageContext.request.contextPath}/file/private/upload_form.jsp">업로드 하기</a>
 	</div>
+	<script>
+		function deleteConfirm(num){
+			let isDelete = confirm("삭제 하시겠습니까?");
+			if(isDelete){
+				location.href="delete.jsp?num="+num;
+			}
+			
+		}
+	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
