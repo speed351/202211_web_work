@@ -6,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	
 	//파일 시스템 상에서 webapp의 upload 폴더까지의 절대경로를 얻어낸다.
 	String realPath = application.getRealPath("/upload");
 	//해당 경로를 access할 수 있는 파일 객체 생성
@@ -14,6 +15,7 @@
 		f.mkdir();		//upload 폴더 만들기
 	}
 	
+	//cos.jar 파일에 있는 MultipartRequest 클래스로 객체 생성
 	MultipartRequest mr = new MultipartRequest(request, // 내부적으로 필요한 HttpServeltRequest 객체 전달
 						realPath, 						// 업로드 된 파일을 저장할 경로
 						1024*1024*100, 					// 최대 업로드 사이즈 제한
@@ -30,7 +32,10 @@
 	//3. 파일의 작성자(업로더)는 HttpSession 객체에서 읽어온다.
 	String writer = (String)session.getAttribute("id");
 	//4. 추가로 원본 파일명, 저장된 파일명, 파일사이즈도 얻어내서 FileDto 객체에 담아서 저장
+	
+	//파일 목록을 출력할 때, 파일을 다운로드 해줄때 필요하다(웹브라우저가 정확한 파일명으로 파일을 만들어야 하기 때문)
 	String orgFileName = mr.getOriginalFileName("myFile");
+	//파일을 다운로드 할 때 필요하다.
 	String saveFileName = mr.getFilesystemName("myFile");
 	long fileSize = mr.getFile("myFile").length();
 	//업로드된 파일정보를 FileDto에 담고

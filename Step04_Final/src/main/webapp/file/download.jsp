@@ -19,10 +19,15 @@
 	*/
 	FileDto dto=FileDao.getInstance().getData(num);
    	//3. 서버의 파일시스템(upload) 에 저장된 파일에서 바이트 알갱이를 읽어서 출력한다(다운로드)
+   	
+   		
+   	//파일 목록을 출력할 때, 파일을 다운로드 해줄때 필요하다(웹브라우저가 정확한 파일명으로 파일을 만들어야 하기 때문)
    	String orgFileName=dto.getOrgFileName();
+	//파일을 다운로드 할 때 필요하다.
    	String saveFileName=dto.getSaveFileName();
    		
-   	//다운로드 시켜줄 파일의 실제 경로 구성하기 
+   	//다운로드 시켜줄 파일의 실제 경로 구성하기
+   	//(File.separator(파일 식별자) => 윈도우는 \ , linux 맥은 /이기 때문에 하드코딩하면 안된다.)
    	String path=application.getRealPath("/upload") + File.separator+saveFileName;
    	//다운로드할 파일에서 읽어들일 스트림 객체 생성하기
    	FileInputStream fis=new FileInputStream(path);
@@ -48,6 +53,7 @@
    	//다운로드할 파일의 크기 읽어와서 다운로드할 파일의 크기 설정
    	response.setContentLengthLong(dto.getFileSize());
    	
+   	//Exception 발생하지 않도록 (response.getOutputStream() 호출 전에 해야한다.)
    	out.clear();
    	out = pageContext.pushBody();
    	

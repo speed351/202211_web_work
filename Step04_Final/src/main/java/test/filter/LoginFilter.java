@@ -17,6 +17,10 @@ import javax.servlet.http.HttpSession;
  * [요청을 가로채서 중간에 원하는 작업을 할 수 있는 필터 만들기]
  * 1. javax.servlet.Filter 인터페이스를 구현한다.
  * 2. 어떤 요청에 대해 필터링을 할 것인지 맵핑한다.
+ * 
+ * 클래스를 만들어서 설정만 해두고, 필터 클래스들은 필요한 시점에 자동으로 생성된다(tomcat과 같은 도구들이)
+ * 메소드들 또한 적절한 시점에 자동으로 호출된다(사용하는 도구들이)
+ * 따라서 우리는 알아서 전달된다는 가정하에 원하는 작업을 진행하면 된다.
  */
 
 @WebFilter(urlPatterns = {"/private/*" , "/users/private/*" , "/file/private/*" })
