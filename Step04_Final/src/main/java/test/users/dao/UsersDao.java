@@ -64,12 +64,13 @@ public class UsersDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql문의 뼈대 구성
 			String sql = "UPDATE users"
-					+ " SET email=?"
+					+ " SET email=?, profile =?"
 					+ " WHERE id=?";
 			//sql문의 ?에 바인딩 할 항목이 있다면 하기
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getEmail());
-			pstmt.setString(2, dto.getId());
+			pstmt.setString(2, dto.getProfile());
+			pstmt.setString(3, dto.getId());
 			
 
 			//반복문 돌면서 ResultSet에 필요한값 넣기
