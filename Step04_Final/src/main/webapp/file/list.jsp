@@ -4,7 +4,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
 	//로그인된 아이디를 읽어온다(로그인 하지 않았으면 null이다)
 	String id = (String)session.getAttribute("id");
 
@@ -66,12 +65,15 @@
 
 <body>
 	<div class="container">
-		<h3>자료실 목록 보기</h3>
 		<jsp:include page="/include/nav_bar.jsp">
-			<jsp:param value="index" name="thisPage"/>
+			<jsp:param value="file" name="thisPage"/>
 		</jsp:include>
-		<table>
-			<thead>
+			<div>
+				<img class="title_image" src="https://www.wallpaperup.com/uploads/wallpapers/2015/01/19/590738/03184d055da164780a30798d345d4cfd-1000.jpg" alt="file" style="width:70%;"/>
+			</div>
+			<br>
+		<table class="table table-striped" >
+			<thead class="table table-dark">
 				<tr>
 					<th>번호</th>
 					<th>작성자</th>

@@ -18,11 +18,14 @@
 
 <body>
 	<div class="container">
-		<h3>공부 페이지 입니다</h3>
+		
 		<jsp:include page="/include/nav_bar.jsp">
 			<jsp:param value="study" name="thisPage"/>
 		</jsp:include>
-		
+		<div>
+			<img class="title_image" src="https://www.wallpaperup.com/uploads/wallpapers/2014/10/02/467044/6327d828d1a186d5253927c2a5145c94-1000.jpg" alt="study" style="width:70%;"/>
+		</div>
+		<br>
 		<p><%=id %> 님 열심히 공부해요!</p>
 	</div>
 </body>

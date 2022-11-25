@@ -47,7 +47,7 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-<body>
+<body onload="javascript:window_onload()">
 	<%if(isValid){ %>
 
 		<h3>로그인 성공</h3>
@@ -59,6 +59,15 @@
 		</p>
 		
 	<%} %>
+	
+	<script>
+	    function window_onload(){
+	        setTimeout('go_url()',5000)  // 5초후 go_url() 함수를 호출한다.
+	     }
+	     function go_url(){
+	        location.href="${pageContext.request.contextPath}/index.jsp"
+	     }
+	</script>
 
 </body>
 </html>

@@ -22,10 +22,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 <body>
-	<div class="container">
+	<div class="container" >
 		<h3>로그인 폼</h3>
 		<jsp:include page="/include/nav_bar.jsp">
-		<jsp:param value="index" name="thisPage"/>
+			<jsp:param value="index" name="thisPage"/>
 		</jsp:include>
 		<form action="login.jsp" method="post">
 			<!-- 로그인 성공 후 어디로 갈지에 대한 정보를 url이라는 파라미터 명으로 같이 전송되도록 한다. -->

@@ -18,10 +18,13 @@
 
 <body>
 	<div class="container">
-		<h3>게임 페이지 입니다</h3>
 		<jsp:include page="/include/nav_bar.jsp">
 			<jsp:param value="game" name="thisPage"/>
 		</jsp:include>
+			<div>
+				<img class="title_image" src="https://www.wallpaperup.com/uploads/wallpapers/2013/11/02/169074/7904c098c2b0def287886ffc0c2599e9-1000.jpg" alt="game" style="width:70%;"/>
+			</div>
+			<br>
 		<p><%=id %> 님 열심히 게임해요!</p>
 		
 	</div>

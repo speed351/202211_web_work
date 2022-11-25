@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  * 따라서 우리는 알아서 전달된다는 가정하에 원하는 작업을 진행하면 된다.
  */
 
-@WebFilter(urlPatterns = {"/private/*" , "/users/private/*" , "/file/private/*" })
+@WebFilter(urlPatterns = {"/private/*" , "/users/private/*" , "/file/private/*" , "/cafe/private/*"})
 public class LoginFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
