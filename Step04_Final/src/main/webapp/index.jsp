@@ -49,7 +49,7 @@ h5, p, a {
 
 	<div class="container">
 			<div>
-				<img class="title_image" src="https://digitalhub.fifa.com/transform/07ef0102-18bb-4b9a-9263-e64e28653d19/FIFAPLS_WorldCup22Analysis_01_Hero_32_Korea_Republic_00?io=transform:fill,height:648,width:1440&quality=75" alt="index" style="width:110%"/>
+				<img class="title_image" src="https://post-phinf.pstatic.net/MjAyMjEwMjRfMTYy/MDAxNjY2NTUwMjk1ODg3.hRnyDmU_zUjFG_7TRwJ3qJ0_JlXFM5CMrrjngBbYkaEg.frIeOOorSFB0geSrJoh2MzTvSADa8uc4fWIpNCud3XIg.PNG/image.png" alt="index" style="width:110%"/>
 			</div>
 		<div class="content">
 			<jsp:include page="/include/nav_bar.jsp">
