@@ -23,7 +23,7 @@
     margin: auto;
 }
 .form-control{
-	width : 250px;
+	width : 430px;
 }
 </style>
 <body>

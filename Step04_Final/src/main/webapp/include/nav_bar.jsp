@@ -39,7 +39,7 @@ body{
 	flex-wrap: nowrap;
 	flex-direction: row;
 	justify-content: center;
-	max-width: 100%;
+	max-width: 1690px;
 }
 
 

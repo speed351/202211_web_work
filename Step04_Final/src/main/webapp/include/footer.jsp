@@ -5,9 +5,10 @@
 <style>
 .footer_form{
 	margin-left : 210px;
-	width : 70%;
+	width : 100%;
 	position : absolute;
 	bottom : 0px;
+	max-width : 1422px;
 }
 .bd-placeholder-img {
 	font-size: 1.125rem;
