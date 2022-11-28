@@ -5,28 +5,61 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 <style>
 textarea {
 	width: 768px;
 	height: 300px;
 }
+
+.content_box{
+	position : absoulte;
+	border-style : solid;
+	border-color : #ced4da;
+	border-radius : 5px;
+	width : 836px;
+	height : 510px;
+	padding : 30px;
+	background-color : white;
+    margin: auto;
+}
 </style>
 </head>
 <body>
-	<div class="container">
-		<h3>새글 작성 폼입니다.</h3>
-		<form action="insert.jsp" method="post">
-			<div>
-				<label for="title">제목</label> <input type="text" name="title"
-					id="title" />
-			</div>
-			<div>
-				<label for="content">내용</label>
-				<textarea name=content id="content" row="10"></textarea>
-			</div>
-			<button type="submit" onclick="submitContents(this)">등록</button>
-		</form>
+	<jsp:include page="/include/nav_bar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
+	<div class="main_container" >
+		
+		<br>
+		<h3 style="text-align:center">카페 글 작성</h3>
+		<br>
+		<div class="content_box">
+			<form action="insert.jsp" method="post">
+				<div>
+					<label for="title">제목</label> <input type="text" name="title"
+						id="title" />
+				</div>
+				<div>
+					<label for="content">내용</label>
+					<textarea name=content id="content" row="10"></textarea>
+				</div>
+			
+				<button class="btn btn-primary" type="submit" onclick="submitContents(this)">등록</button>
+			</form>
+		</div>
 	</div>
+		<jsp:include page="/include/footer.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
+
+		<jsp:include page="/include/ad.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>	
 
 	<%--
       [ SmartEditor 를 사용하기 위한 설정 ]

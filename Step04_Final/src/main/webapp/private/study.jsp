@@ -28,5 +28,12 @@
 		<br>
 		<p><%=id %> 님 열심히 공부해요!</p>
 	</div>
+		<jsp:include page="/include/footer.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
+
+		<jsp:include page="/include/ad.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>	
 </body>
 </html>

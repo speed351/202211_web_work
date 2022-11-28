@@ -21,6 +21,9 @@ if (url == null) {
 String thisPage = request.getParameter("thisPage");
 %>
 <style>
+body{
+	background-color: #EAEAEA;
+}
 .side_bar {
 	position: fixed;
 	top: 0;
@@ -28,22 +31,17 @@ String thisPage = request.getParameter("thisPage");
 	width: 200px;
 	height: 100%;
 }
+.container{
+	margin-left : 200px;
+}
+.main_container{
 
-.container {
-	margin-left: 200px;
-	margin-right: 200px;
 	flex-wrap: nowrap;
 	flex-direction: row;
 	justify-content: center;
+	max-width: 100%;
 }
 
-.main_content {
-	margin-right: 200px;
-}
-
-.table {
-	width: 70%;
-}
 
 .sticky-box {
 	position: fixed;
@@ -65,7 +63,13 @@ String thisPage = request.getParameter("thisPage");
 	position : absolute;
 	left : 30px;
 	bottom : 50px;
+	display: inherit;
 }
+.login{
+	margin-right:5px;
+}
+
+
 </style>
 
 
@@ -74,7 +78,7 @@ String thisPage = request.getParameter("thisPage");
 	<a href="${pageContext.request.contextPath}/index.jsp"
 		class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 		<svg class="bi pe-none me-2" width="40" height="32">
-				<use xlink:href="#bootstrap" /></svg> <span class="fs-4">Menu</span>
+				<use xlink:href="" /></svg> <span class="fs-4">Menu</span>
 	</a>
 	<hr>
 	<ul class="nav nav-pills flex-column mb-auto">
@@ -131,8 +135,6 @@ String thisPage = request.getParameter("thisPage");
 		%>
 	</ul>
 	<hr>
-	<div class="sticky-box">
-		<p>광고 자리</p>
-	</div>
+
 </div>
 

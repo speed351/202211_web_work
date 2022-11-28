@@ -123,12 +123,9 @@
 				<%} %>
 			</tbody>
 		</table>
-		<a href="${pageContext.request.contextPath}/cafe/private/insertform.jsp">새글 작성</a> 
-		
 		
 
-		
-		<nav>
+		<nav style="display:inline;">
 			<ul class="pagination">
 				<%if(startPageNum != 1){ %>
 					<li class="page-item"><a href="list.jsp?pageNum=<%=startPageNum-1 %>" class="page-link">Prev</a></li>
@@ -141,11 +138,20 @@
 					<li class="page-item"><a href="list.jsp?pageNum=<%=endPageNum+1 %>" class="page-link" >Next</a></li>
 				<%}%>
 			</ul>
-		</nav>	
+		</nav>
+		<form action="${pageContext.request.contextPath}/cafe/private/insertform.jsp" style="display:inline; ">
+			<button class="btn btn-primary" type="submit">새글 작성</button>
+		</form>	
+	</div>		
 		
 		
-		
-	</div>
+		<jsp:include page="/include/footer.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
+
+		<jsp:include page="/include/ad.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>	
 
 
 

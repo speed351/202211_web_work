@@ -39,9 +39,6 @@ form {
 	display: inline;
 }
 
-div {
-	margin-bottom: 5px;
-}
 
 h5, p, a {
 	display: inline;
@@ -52,7 +49,7 @@ h5, p, a {
 
 	<div class="container">
 			<div>
-				<img class="title_image" src="https://img.freepik.com/vetores-premium/copa-do-mundo-de-futebol-2022-com-bola-de-futebol-3d-realista-cartaz-de-esporte-banner-design-moderno-de-folheto-fonte-do-conceito-de-futebol-2022-em-fundo-moderno_104045-1616.jpg" alt="index" style="width:70%;"/>
+				<img class="title_image" src="https://img2.sbs.co.kr/img/sbs_cms/WE/2021/06/11/U4R1623403164601.jpg" alt="index" style="width:100%"/>
 			</div>
 		<div class="content">
 			<jsp:include page="/include/nav_bar.jsp">
@@ -61,6 +58,14 @@ h5, p, a {
 
 		</div>
 	</div>
+		<jsp:include page="/include/footer.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>
+
+		<jsp:include page="/include/ad.jsp">
+			<jsp:param value="index" name="thisPage"/>
+		</jsp:include>	
+
 
 </body>
 </html>
