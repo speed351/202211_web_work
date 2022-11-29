@@ -65,6 +65,12 @@ body{
 	bottom : 50px;
 	display: inherit;
 }
+.user_info{
+	position: fixed;
+	bottom : 150px;
+	left : 60px;
+	text-align:center;
+}
 .login{
 	margin-right:5px;
 }
@@ -127,7 +133,11 @@ body{
 		<%
 		} else {
 		%>
-		<div class="logout">
+		
+		<div class="user_info">
+			<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a>님<br><p>안녕하세요</p>
+		</div>
+		<div class="logout">	
 			<a href="${pageContext.request.contextPath}/users/logout.jsp" class="btn btn-secondary btn-sm logout"> Logout </a>
 		</div>
 		<%

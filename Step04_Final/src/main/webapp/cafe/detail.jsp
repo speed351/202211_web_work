@@ -50,7 +50,7 @@ p{
 </head>
 <body>
 	<jsp:include page="/include/nav_bar.jsp">
-		<jsp:param value="index" name="thisPage"/>
+		<jsp:param value="cafe" name="thisPage"/>
 	</jsp:include>
 	<div class="main_container">
 		<br>

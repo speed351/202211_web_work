@@ -3,6 +3,9 @@
 
 <div class="footer_form">
 <style>
+footer{
+	background-color: #EAEAEA;
+}
 .footer_form{
 	margin-left : 210px;
 	width : 100%;

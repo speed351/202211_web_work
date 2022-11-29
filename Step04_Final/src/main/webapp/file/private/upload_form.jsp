@@ -29,7 +29,7 @@
 		<h3 style="text-align:center">파일 업로드</h3>
 		<br>
 		<jsp:include page="/include/nav_bar.jsp">
-			<jsp:param value="index" name="thisPage"/>
+			<jsp:param value="file" name="thisPage"/>
 		</jsp:include>
 		<!-- 
 			파일 업로드 폼 작성법
