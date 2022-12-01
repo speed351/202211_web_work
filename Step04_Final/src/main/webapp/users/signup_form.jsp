@@ -10,6 +10,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <style>
 .signup_box{
 	position : relative;
@@ -43,6 +45,7 @@
 				<div>
 					<label class="control-label" for="id">아이디</label>
 					<input class="form-control" type="text" name="id" id="id" />
+					<small class="form-text text-muted">영문자 소문자로 시작하고 5~10글자 이내로 입력하세요.</small>
 					<div class="valid-feedback">사용 가능한 아이디 입니다.</div>
 					<div class="invalid-feedback">사용할 수 없는 아이디 입니다.</div>
 					
@@ -50,6 +53,7 @@
 				<div>
 					<label class="control-label" for="pwd">비밀번호</label>
 					<input class="form-control" type="password" name="pwd" id="pwd" />
+					<small class="form-text text-muted">특수 문자를 하나 이상 조합하세요.</small>
 					<div class="invalid-feedback">비밀번호를 확인하세요</div>
 				</div>
 				<div>
@@ -81,8 +85,7 @@
 		let isIdValid = false;
 		let isPwdValid = false;
 		let isEmailValid = false;
-		
-		
+
 		document.querySelector("#email").addEventListener("input", function(){
 		    
 		    this.classList.remove("is-valid");
@@ -90,7 +93,8 @@
 		    //입력한 이메일
 		    const inputEmail=this.value;
 		    //이메일을 검증할 정규 표현식  
-		    const reg=/@/;
+		    //const reg=/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+         	const reg=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 			//만일 입력한 이메일이 정규표현식을 만족하지 않는다면
 		    if(!reg.test(inputEmail)){
 		       this.classList.add("is-invalid");
@@ -109,6 +113,14 @@
 			const pwd = document.querySelector("#pwd").value;
 			const pwd2 = document.querySelector("#pwd2").value;
 			
+			//비밀번호를 검증할 정규 표현식
+			const reg=/[\W]/;
+			if(!reg.test(pwd)){
+				document.querySelector("#pwd").classList.add("is-invalid");
+				isPwdValid=false;
+				return; //함수를 여기서 끝내라 
+			}
+			
 			//만약 비밀번호 입력란과 확인란이 다르다면
 			if(pwd !=pwd2){
 				document.querySelector("#pwd").classList.add("is-invalid");
@@ -119,6 +131,9 @@
 				isPwdValid=true;
 			}
 		}
+		
+		
+		
 		document.querySelector("#pwd").addEventListener("input", function(){
 			checkPwd();
 		});
@@ -134,9 +149,19 @@
 			self.classList.remove("is-valid");
 			self.classList.remove("is-invalid");
 			
-			
 			//1. 입력한 id를 읽어와서
-			const inputId = this.value;
+			const inputId = self.value;
+			//아이디를 검증할 정규표현식
+			const reg = /^[a-z].{4,9}$/;
+			//입력한 id가 정규표현식과 매칭되는지 확인
+			const isMatch = reg.test(inputId);
+			
+			if(!isMatch){
+				self.classList.add("is-invalid");
+				isIdValid=false;
+				return;
+			};
+			
 			//2. 서버에 페이지 전환 없이 전송을하고 응답을 받는다.
 			fetch("checkid.jsp?inputId="+inputId)
 			.then(function(response){
