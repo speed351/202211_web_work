@@ -1,12 +1,12 @@
-<%@page import="test.cafe.dao.CafeDao"%>
-<%@page import="test.cafe.dto.CafeDto"%>
+<%@page import="test.board.dao.BoardDao"%>
+<%@page import="test.board.dto.BoardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 //자세히 보여줄 글의 번호를 읽어온다.
 int num = Integer.parseInt(request.getParameter("num"));
 //DB에서 해당글의 정보를 얻어와서
-CafeDto dto = CafeDao.getInstance().getData(num);
+BoardDto dto = BoardDao.getInstance().getData(num);
 
 //응답한다.
 %>

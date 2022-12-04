@@ -1,13 +1,5 @@
-<%@page import="test.board.dao.BoardDao"%>
-<%@page import="test.board.dto.BoardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-int num = Integer.parseInt(request.getParameter("num"));
-
-BoardDto dto = BoardDao.getInstance().getData(num);
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +11,13 @@ BoardDto dto = BoardDao.getInstance().getData(num);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 <style>
+textarea {
+	width: 768px;
+	height: 300px;
+}
+
 .content_box{
-	position : relative;
+	position : absoulte;
 	border-style : solid;
 	border-color : #ced4da;
 	border-radius : 5px;
@@ -30,42 +27,29 @@ BoardDto dto = BoardDao.getInstance().getData(num);
 	background-color : white;
     margin: auto;
 }
-textarea {
-	width: 768px;
-	height: 300px;
-}
 </style>
 </head>
 <body>
-	<jsp:include page="/include/nav_bar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
-	</jsp:include>
 	<div class="main_container" >
+		
 		<br>
-		<h3 style="text-align:center">카페 글 수정</h3>
+		<h3 style="text-align:center">카페 글 작성</h3>
 		<br>
-			<div class="content_box">
-				<form action="update.jsp" method="post">
-					<input type="hidden" name="num" value="<%=dto.getNum()%>" />
-					<div>
-						<label for="title">제목</label> <input type="text" name="title"
-							id="title" value="<%=dto.getTitle()%>" />
-					</div>
-					<div>
-						<label for="content">내용</label>
-						<textarea name=content id="content" row="10"><%=dto.getContent()%></textarea>
-					</div>
-					<button class="btn btn-primary" type="submit" onclick="submitContents(this)">등록</button>
-				</form>
-			</div>
+		<div class="content_box">
+			<form action="insert.jsp" method="post">
+				<div>
+					<label for="title">제목</label> <input type="text" name="title"
+						id="title" />
+				</div>
+				<div>
+					<label for="content">내용</label>
+					<textarea name=content id="content" row="10"></textarea>
+				</div>
+			
+				<button class="btn btn-primary" type="submit" onclick="submitContents(this)">등록</button>
+			</form>
 		</div>
-		<jsp:include page="/include/footer.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>
-	
-		<jsp:include page="/include/ad.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>	
+	</div>
 
 	<%--
       [ SmartEditor 를 사용하기 위한 설정 ]

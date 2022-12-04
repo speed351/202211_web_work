@@ -62,104 +62,67 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<style>
-.side_bar{
-	position:fixed; 
-	top:0;
-	left:0;
-	width:200px;
-}
-.container{
-	margin-left:200px;
-	margin-right:200px;
-	flex-wrap:nowrap;
-	flex-direction:row;
-	justify-content: center;
-}
-.main_content{
-	margin-right:200px;
-}
-.table{
-	width:70%;
-}
-
-
-</style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main_CSS.css" type="text/css" />
 </head>
-<body>
+	<body>
 
-
-	<div class="container main_content">
-		<jsp:include page="/include/nav_bar.jsp">
-			<jsp:param value="cafe" name="thisPage"/>
-		</jsp:include>
-			<div>
-				<img class="title_image" src="https://www.wallpaperup.com/uploads/wallpapers/2013/07/20/121081/b95e6853b525ca8a019aa03bdc69495d-1000.jpg" alt="cafe" style="width:70%;"/>
+	
+		<div class="container container_board">
+			<jsp:include page="/include/nav_bar.jsp">
+				<jsp:param value="index" name="thisPage" />
+			</jsp:include>		
+			<div class="board_b">
+				<table class="table table-striped">
+					
+					<thead class="table table-dark">
+						<tr>
+							<th style="width:100px; text-align : center;">No.</th>
+							<th style="width:700px;">제목</th>
+							<th style="text-align : center;">작성자</th>
+							<th style="text-align : center;">조회수</th>
+							<th style="text-align : center;">작성일</th>
+						</tr>				
+					</thead>
+					<tbody>
+						<%
+						for(BoardDto tmp:list ){
+						%>
+							<tr>
+								<td style="width:100px; text-align : center;"><%=tmp.getNum() %></td>
+								<td style="width:700px;">
+									<a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a>
+								</td>
+								<td style="text-align : center;"><%=tmp.getWriter() %></td>
+								<td style="text-align : center;"><%=tmp.getViewCount() %></td>
+								<td style="text-align : center;"><%=tmp.getRegdate() %></td>
+							</tr>				
+						<%} %>
+					</tbody>
+				</table>
 			</div>
-			<br>
-		<table class="table table-striped" >
-			<thead class="table table-dark">
-				<tr>
-					<th>No.</th>
-					<th>작성자</th>
-					<th>제목</th>
-					<th>조회수</th>
-					<th>작성일</th>
-				</tr>				
-			</thead>
-			<tbody >
-				<%
-				for(BoardDto tmp:list){
-				%>
-					<tr>
-						<td><%=tmp.getNum() %></td>
-						<td><%=tmp.getWriter() %></td>
-						<td>
-							<a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a>
-						</td>
-						<td><%=tmp.getViewCount() %></td>
-						<td><%=tmp.getRegdate() %></td>
-					</tr>				
-				<%} %>
-			</tbody>
-		</table>
+			<div class="board_f">
+				<nav style="display:inline;">
+					<ul class="pagination">
+						<%if(startPageNum != 1){ %>
+							<li class="page-item"><a href="list.jsp?pageNum=<%=startPageNum-1 %>" class="page-link">Prev</a></li>
+						<%}%>
+						
+						<%for(int i=startPageNum; i<=endPageNum; i++){ %>
+							<li class="page-item <%=pageNum==i ? "active" : ""%>"><a href="list.jsp?pageNum=<%=i%>" class="page-link"><%=i %></a></li>
+						<%} %>
+						<%if(endPageNum<totalPageCount) {%>
+							<li class="page-item"><a href="list.jsp?pageNum=<%=endPageNum+1 %>" class="page-link" >Next</a></li>
+						<%}%>
+					</ul>
+				</nav>
+
+			</div>
+			
+		</div>		
 		
+	</body>
 
-		<nav style="display:inline;">
-			<ul class="pagination">
-				<%if(startPageNum != 1){ %>
-					<li class="page-item"><a href="list.jsp?pageNum=<%=startPageNum-1 %>" class="page-link">Prev</a></li>
-				<%}%>
-				
-				<%for(int i=startPageNum; i<=endPageNum; i++){ %>
-					<li class="page-item <%=pageNum==i ? "active" : ""%>"><a href="list.jsp?pageNum=<%=i%>" class="page-link"><%=i %></a></li>
-				<%} %>
-				<%if(endPageNum<totalPageCount) {%>
-					<li class="page-item"><a href="list.jsp?pageNum=<%=endPageNum+1 %>" class="page-link" >Next</a></li>
-				<%}%>
-			</ul>
-		</nav>
-		<form action="${pageContext.request.contextPath}/cafe/private/insertform.jsp" style="display:inline; ">
-			<button class="btn btn-primary" type="submit">새글 작성</button>
-		</form>	
-	</div>		
-		
-		
-		<jsp:include page="/include/footer.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>
-
-		<jsp:include page="/include/ad.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>	
-
-
-
-
-
-
-	
-	
-	
-</body>
+	<jsp:include page="/include/footer.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 </html>

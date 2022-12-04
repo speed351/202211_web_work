@@ -1,12 +1,14 @@
-<%@page import="test.cafe.dao.CafeDao"%>
-<%@page import="test.cafe.dto.CafeDto"%>
+<%@page import="test.board.dao.BoardDao"%>
+<%@page import="test.board.dto.BoardDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
+p
+
 	//글목록
-	List<CafeDto> list=CafeDao.getInstance().getList();
+	List<BoardDto> list=BoardDao.getInstance().getList();
 	request.setAttribute("list", list);
 %>    
 <!DOCTYPE html>

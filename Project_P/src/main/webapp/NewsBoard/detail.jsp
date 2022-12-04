@@ -49,9 +49,6 @@ p{
 </style>
 </head>
 <body>
-	<jsp:include page="/include/nav_bar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
-	</jsp:include>
 	<div class="main_container">
 		<br>
 		<h3 style="text-align:center">글 상세 보기</h3>
@@ -125,17 +122,8 @@ p{
 			%>		
 		</div>	
 
-
-
-
-	<jsp:include page="/include/footer.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>
-	</div>
-		<jsp:include page="/include/ad.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>	
-
-
 </body>
+	<jsp:include page="/include/footer.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 </html>

@@ -37,9 +37,6 @@ textarea {
 </style>
 </head>
 <body>
-	<jsp:include page="/include/nav_bar.jsp">
-		<jsp:param value="cafe" name="thisPage"/>
-	</jsp:include>
 	<div class="main_container" >
 		<br>
 		<h3 style="text-align:center">카페 글 수정</h3>
@@ -59,13 +56,7 @@ textarea {
 				</form>
 			</div>
 		</div>
-		<jsp:include page="/include/footer.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>
-	
-		<jsp:include page="/include/ad.jsp">
-			<jsp:param value="index" name="thisPage"/>
-		</jsp:include>	
+
 
 	<%--
       [ SmartEditor 를 사용하기 위한 설정 ]
