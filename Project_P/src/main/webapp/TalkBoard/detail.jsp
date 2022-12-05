@@ -26,12 +26,12 @@ BoardDao.getInstance().addViewCount(num);
 
 </head>
 <body>
-	<div class="container">
+	<div class="container container_board"  style="min-height: 700px;">
 		<jsp:include page="/include/nav_bar.jsp">
 				<jsp:param value="index" name="thisPage" />
 		</jsp:include>	
 		
-		<div class="board_b">
+		<div class="board_b" style="grid-column-start:2; grid-column-end:3;">
 			<table>
 				<tr>
 					<th>No.</th>
@@ -70,6 +70,11 @@ BoardDao.getInstance().addViewCount(num);
 	
 			
 			</table>
+			<div class="board_f">
+				<a class="btn btn-primary" href="private/updateform.jsp?num=<%=dto.getNum()%>">수정</a>
+				<a class="btn btn-danger" href="javascript:" onclick="deleteConfirm()">삭제</a>
+				<a class="btn btn-secondary" href="/list.jsp">목록</a>
+			</div>
 			<%
 			//로그인된 아이디가 있으면 읽어온다 (null 일수도 있다)
 			String id = (String) session.getAttribute("id");
@@ -89,15 +94,7 @@ BoardDao.getInstance().addViewCount(num);
 					}
 				}
 			</script>
-			<div class="board_f">
-				<a class="detail_btn_submit" href="private/updateform.jsp?num=<%=dto.getNum()%>"><button class="btn btn-primary">수정</button></a>
-				<a class="detail_btn_delete" href="javascript:" onclick="deleteConfirm()"><button class="btn btn-danger">삭제</button></a>
-				<a class="detail_btn_delete" href="/list.jsp"><button class="btn btn-secondary">목록</button></a>
-			</div>
-
-			<%
-			}
-			%>		
+			<%}	%>		
 		</div>	
 	</div>	
 

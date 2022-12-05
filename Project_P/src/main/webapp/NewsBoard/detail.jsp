@@ -49,7 +49,7 @@ p{
 </style>
 </head>
 <body>
-	<div class="main_container">
+	<div class="main_container"  style="min-height: 700px;">
 		<br>
 		<h3 style="text-align:center">글 상세 보기</h3>
 		<br>

@@ -67,7 +67,7 @@
 	<body>
 
 	
-		<div class="container container_board">
+		<div class="container container_board" style="min-height: 700px;">
 			<jsp:include page="/include/nav_bar.jsp">
 				<jsp:param value="index" name="thisPage" />
 			</jsp:include>		

@@ -10,7 +10,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
 </head>
 <body>
 	<div class="container container_tournaments">
@@ -39,7 +38,7 @@
 			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.10. 04:00</p>
 				</div>
 			</div>
-			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: 49%;"></div>
+			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 27px;top: 49%;"></div>
 		</div>
 		<div class="board_16_8_m1">
 			<div class="card" style="width:200px;">
@@ -51,7 +50,7 @@
 					<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.04. 04:00</p>
 				</div>
 			</div>
-			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: -23%;"></div>
+			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 27px;top: -23%;"></div>
 		</div>
 		<div class="board_16_8_m2">
 			<div class="card" style="width:200px;">
@@ -73,7 +72,7 @@
 			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.10. 00:00</p>
 				</div>
 			</div>
-			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: 49%;"></div>
+			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 27px;top: 49%;"></div>
 		</div>		
 		<div class="board_16_8_b">
 			<div class="card" style="width:200px;">
@@ -85,7 +84,7 @@
 			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.06. 04:00</p>
 				</div>
 			</div>
-			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: -23%;"></div>
+			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: :;;top: -23%;"></div>
 		</div>
 		
 		

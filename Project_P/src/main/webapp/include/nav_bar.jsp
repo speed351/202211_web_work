@@ -46,7 +46,7 @@
 							<div class="login_nav_user">
 								<a href=""><span>&nbsp;&nbsp;<%=id %> </span></a>´Ô ¾È³çÇÏ¼¼¿ä.&nbsp;
 	
-								<a href="${pageContext.request.contextPath}/users/logout.jsp">·Î±×¾Æ¿ô&nbsp;&nbsp;</a>
+								<a href="${pageContext.request.contextPath}/users/logout.jsp">&nbsp;&nbsp;·Î±×¾Æ¿ô</a>
 								
 							</div>
 							

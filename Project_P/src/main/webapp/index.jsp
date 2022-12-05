@@ -85,7 +85,6 @@
 
 </head>
 <body>
-
 	<div class="container">
 		<jsp:include page="/include/nav_bar.jsp">
 				<jsp:param value="index" name="thisPage" />
@@ -97,7 +96,7 @@
 		</div>
 		<div class="board1">
 			<div class="board_title">
-				<a href="" style="text-decoration : none;">
+				<a href="${pageContext.request.contextPath}/TalkBoard/list.jsp" style="text-decoration : none;">
 					<strong>&nbsp;
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wechat" viewBox="0 0 16 16">
 						  <path d="M11.176 14.429c-2.665 0-4.826-1.8-4.826-4.018 0-2.22 2.159-4.02 4.824-4.02S16 8.191 16 10.411c0 1.21-.65 2.301-1.666 3.036a.324.324 0 0 0-.12.366l.218.81a.616.616 0 0 1 .029.117.166.166 0 0 1-.162.162.177.177 0 0 1-.092-.03l-1.057-.61a.519.519 0 0 0-.256-.074.509.509 0 0 0-.142.021 5.668 5.668 0 0 1-1.576.22ZM9.064 9.542a.647.647 0 1 0 .557-1 .645.645 0 0 0-.646.647.615.615 0 0 0 .09.353Zm3.232.001a.646.646 0 1 0 .546-1 .645.645 0 0 0-.644.644.627.627 0 0 0 .098.356Z"/>
@@ -110,21 +109,9 @@
 			<div class="board_content"  >
 			<hr style="margin:5px; color:#00ff0000" />
 				<ul>
-					<%
-					for(int i=0; i<5;i++){
-					%>
-						<%if(i==3){ %>
-	
-								<li>디비에 없는경우</li>
-								
-						<%}else{ %>
-								<li>
-									<a href=""><%=i%> 번 토론글 </a>
-								</li>	
-						<%} %>
-					<%} %>
+			
 				
-				<%-- 	<%
+				<%
 					for(BoardDto tmp:list ){
 					%>
 						<%if(tmp==null){ %>
@@ -136,13 +123,13 @@
 									<a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a>
 								</li>	
 						<%} %>
-					<%} %> --%>
+					<%} %>
 				</ul>
 			</div>
 		</div>
 		<div class="board2">
 			<div class="board_title" >
-				<a href="" style="text-decoration : none;">
+				<a href="${pageContext.request.contextPath}/NewsBoard/list.jsp" style="text-decoration : none;">
 					<strong>&nbsp;
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
 						  <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
@@ -166,7 +153,7 @@
 		</div>
 		<div class="rank">
 			<div class="board_title" style="position:relative;">
-				<a href="" style="text-decoration : none;">
+				<a href="${pageContext.request.contextPath}/Ranking/rank.jsp" style="text-decoration : none;">
 					<strong>&nbsp;
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
 			  				<path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
