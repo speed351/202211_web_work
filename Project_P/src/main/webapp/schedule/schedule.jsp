@@ -13,65 +13,190 @@
 
 </head>
 <body>
-	<div class="container_board container">
+	<div class="container container_tournaments">
 		<jsp:include page="/include/nav_bar.jsp">
 				<jsp:param value="index" name="thisPage" />
 		</jsp:include>
 		
-		<div class="board_h">
+		
+		<div class="board_16_8_t">
+			<div class="card" style="width:200px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/NED?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4705">네덜란드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">3</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/USA?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4724" style="color:gray;">미국</a><strong class="score" style="position:absolute; right :10%; color:gray;">1</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.04. 00:00</p>
+				</div>
+			</div>
+			<%-- 8강 --%>
+			<div class="card" style="width:200px; position:absolute; right: -15%; top: 123%;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/NED?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4705">네덜란드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ARG?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4819" style="color:;">아르헨티나</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.10. 04:00</p>
+				</div>
+			</div>
+			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: 49%;"></div>
+		</div>
+		<div class="board_16_8_m1">
+			<div class="card" style="width:200px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ARG?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4819">아르헨티나&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">2</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/AUS?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=7317" style="color:gray;">호주</a><strong class="score" style="position:absolute; right :10%; color:gray;">1</strong>
+					<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.04. 04:00</p>
+				</div>
+			</div>
+			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: -23%;"></div>
+		</div>
+		<div class="board_16_8_m2">
+			<div class="card" style="width:200px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/JPN?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=6736">일본&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/CRO?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4715" style="color:;">크로아티아</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.6. 00:00</p>
+				</div>
+			</div>
+			<%-- 8강 --%>
+			<div class="card" style="width:200px; position:absolute; right: -15%; top: 121%;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="" alt="" />&nbsp;
+				  	<a href="">TBD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="" alt="" />&nbsp;
+			  		<a href="" style="color:;">TBD</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.10. 00:00</p>
+				</div>
+			</div>
+			<div style="position: absolute; border-top: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: 49%;"></div>
+		</div>		
+		<div class="board_16_8_b">
+			<div class="card" style="width:200px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/BRA?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4748">브라질&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/KOR?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=23120" style="color:;">대한민국</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.06. 04:00</p>
+				</div>
+			</div>
+			<div style="position: absolute; border-bottom: solid #80808080 1px;border-right: solid #80808080 1px;width: 141px;height: 60px;right: 11%;top: -23%;"></div>
+		</div>
+		
+		
+		<div class="board_4_f_t">
 		<br>
-			<h3 style="text-align:center;">다음 경기 일정</h3>
-		</div>
+			<h3 style="text-align:center;">경기 일정</h3>
+		</div>	
 		
-		<div class="boardb" style="text-align:center; grid-column-start:1; grid-column-end:2;">
-			<!-- 경기 카드 이미지 -->
-			<div class="card" style="width:78%; margin-left: 30%">
-			  <img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/FRA?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title">프랑스</h5>
-			    <p class="card-text">피파 랭킹 : <strong style="color:red;">4위</strong></p>
-			    <p class="card-text">감독 : <strong style="color:red;">디디에 데샹</strong></p>
-			    <p class="card-text">키 플레이어 : <strong style="color:red;">킬리안 음바페</strong></p>
-			    <a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4481" class="btn btn-primary">자세히 보기</a>
-			  </div>
+		<div class="board_4_f_m1">
+			<div class="card" style="width:200px; position: absolute; left:150px; bottom: 50%; ">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<p style="text-align:center;">FINAL</p>
+					<img src="" alt="" />&nbsp;
+				  	<a href="">TBD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="" alt="" />&nbsp;
+			  		<a href="" style="color:;">TBD</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.19. 00:00</p>
+				</div>
 			</div>
-		</div>
-		<div class="boardb" style="text-align:center;grid-column-start:2; grid-column-end:3;">
-			<h3 >VS</h3>
-		</div>
+		</div>	
+		<div class="board_4_f_m2">
+			
 		
-		<div class="boardb" style="text-align:center;grid-column-start:3; grid-column-end:4;">
-			<!-- 경기 카드 이미지 -->
-			<div class="card" style="width:70%;">
-			  <img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/POL?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title">폴란드</h5>
-			    <p class="card-text">피파 랭킹 : <strong style="color:red;">26위</strong></p>
-			    <p class="card-text">감독 : <strong style="color:red;">체스와프 미흐네비츠</strong></p>
-			    <p class="card-text">키 플레이어 : <strong style="color:red;">로베르트 레반도프스키</strong></p>
-			    <a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4703" class="btn btn-primary">자세히 보기</a>
-			  </div>
+		</div>		
+		
+		<div class="board_4_f_b">
+			<div class="card" style="width:200px; position: absolute; left:150px; bottom: 105px; ">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<p style="text-align:center;">3,4위전</p>
+					<img src="" alt="" />&nbsp;
+				  	<a href="">TBD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="" alt="" />&nbsp;
+			  		<a href="" style="color:;">TBD</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.18. 00:00</p>
+				</div>
 			</div>
+		</div>	
+		
+		
+		
+		
+		
+		<div class="board_8_16_t">
+			<div class="card" style="width:200px; position:absolute; right:0%; bottom:-40px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ENG?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4713">잉글랜드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">3</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/SEN?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4739" style="color:gray;">세네갈</a><strong class="score" style="position:absolute; right :10%; color:gray;">0</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.05. 04:00</p>
+				</div>
+			</div>
+			<%-- 8강 --%>
+			<div class="card" style="width:200px;position:absolute;right: 63%;bottom: -141px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ENG?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4713">잉글랜드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/FRA?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4481" style="color:;">프랑스</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.11. 04:00</p>
+				</div>
+			</div>
+			<div style="position: absolute;border-top: solid #80808080 1px;border-left: solid #80808080 1px;width: 141px;height: 60px;right: 200px;top: 49%;"></div>
 		</div>
-		<br><br><br><br><br><br><br><br><br>	
-		<div class="board_f"  style="text-align:center; grid-column-start:1; grid-column-end:2; display: inline-flex; position:relative; left:30%; bottom: -100%;height: 100px;">
-		 	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4713"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ENG?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:30%; position: absolute; border: 1px solid;"></a>
-			<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4739"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/SEN?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:30%; left: 100px; position: absolute; border: 1px solid;""></a>
-			<br>
-			<h5 style="position: absolute; bottom:0%; left: 5%;">2022.12.05 04:00</h5>
+		<div class="board_8_16_m1">
+			<div class="card" style="width:200px; position:absolute; right:0%; bottom:-40px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/FRA?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4481">프랑스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">3</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/POL?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4703" style="color:gray;">폴란드</a><strong class="score" style="position:absolute; right :10%; color:;">1</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.5. 00:00</p>
+				</div>
+			</div>
+			<div style="position: absolute;border-bottom: solid #80808080 1px;border-left: solid #80808080 1px;width: 141px;height: 60px;right: 200px;top:-59px;"></div>
 		</div>
-		<div class="board_f"  style="text-align:center; grid-column-start:2; grid-column-end:3; display: inline-flex; position:relative; left:30%; bottom: -100%;height: 100px;">
-		 	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=6736"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/JPN?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:23.7%; position: absolute; border: 1px solid;"></a>
-			<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4715"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/CRO?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:23.7%; left: 100px; position: absolute; border: 1px solid;""></a>
-			<br>
-			<h5 style="position: absolute; bottom: 0%; left: 5%;">2022.12.07 00:00</h5>
+		<div class="board_8_16_m2">
+			<div class="card" style="width:200px; position:absolute; right:0%; bottom:-40px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/MAR?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4778">모로코&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/ESP?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4698" style="color:gray;">스페인</a><strong class="score" style="position:absolute; right :10%; color:gray;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.07. 00:00</p>
+				</div>
+			</div>
+			<%-- 8강 --%>
+			<div class="card" style="width:200px;position:absolute;right: 63%;bottom: -141px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="" alt="" />&nbsp;
+				  	<a href="">TBD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="" alt="" />&nbsp;
+			  		<a href="" style="color:;">TBD</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.11. 00:00</p>
+				</div>
+			</div>
+			<div style="position: absolute;border-top: solid #80808080 1px;border-left: solid #80808080 1px;width: 141px;height: 60px;right: 200px;top: 49%;"></div>
 		</div>
-		<div class="board_f"  style="text-align:center; grid-column-start:3; grid-column-end:4; display: inline-flex; position:relative; left:30%; bottom: -100%;height: 100px;">
-		 	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4748"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/BRA?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:23.7%; position: absolute; border: 1px solid;"></a>
-			<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=23120"><img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/KOR?tx=c_fill,g_auto,q_auto" class="card-img-top" alt="..." style="width:23.7%; left: 100px; position: absolute; border: 1px solid;""></a>
-			<br>
-			<h5 style="position: absolute; bottom:0%; left: 5%;">2022.12.07 04:00</h5>
+		<div class="board_8_16_b">
+			<div class="card" style="width:200px; position:absolute; right:0%; bottom:-40px;">
+				<div class="card-body" style="padding-bottom: 0px;">
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/POR?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+				  	<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4704">포르투갈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><strong class="score" style="position:absolute; right :10%;">TBD</strong>
+					<img src="https://cloudinary.fifa.com/api/v3/picture/flags-sq-4/SUI?tx=c_fill,g_auto,q_auto,w_24" alt="" />&nbsp;
+			  		<a href="https://m.sports.naver.com/qatar2022/nation/index?teamCode=4699" style="color:;">스위스</a><strong class="score" style="position:absolute; right :10%; color:;">TBD</strong>
+			  		<p style="font-size:8px; margin-top:0; margin-bottom:0; text-align:center;">22.12.5. 00:00</p>
+				</div>
+			</div>
+			<div style="position: absolute;border-bottom: solid #80808080 1px;border-left: solid #80808080 1px;width: 141px;height: 60px;right: 200px;top:-59px;"></div>
 		</div>
+
 	</div>
 	<jsp:include page="/include/footer.jsp">
 		<jsp:param value="index" name="thisPage"/>
